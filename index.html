@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="一个纯 HTML / CSS / JS 的静态站点，用于演示 GitHub Pages 部署。">
+  <title>我的网站 · GitHub Pages</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="index.html">🚀 MySite</a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">首页</a></li>
+        <li><a href="#features">功能</a></li>
+        <li><a href="#about">关于</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 首屏 -->
+    <section id="home" class="hero">
+      <h1 class="hero-title">你好，GitHub Pages 👋</h1>
+      <p class="hero-subtitle">这是一个只有 HTML、CSS 和 JavaScript 的静态站点，可以直接部署到 GitHub Pages。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#features">看看功能</a>
+        <a class="btn btn-ghost" href="https://docs.github.com/zh/pages" target="_blank" rel="noopener">官方文档 ↗</a>
+      </div>
+      <div class="counter-card">
+        <span class="counter-label">你点击了：</span>
+        <span id="counter" class="counter-value">0</span>
+        <span class="counter-label">次</span>
+        <button id="count-btn" class="btn btn-primary">点我 +1</button>
+      </div>
+    </section>
+
+    <!-- 功能 -->
+    <section id="features" class="section">
+      <h2 class="section-title">用到了什么</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">🎨</div>
+          <h3>CSS 变量与响应式</h3>
+          <p>通过 CSS 自定义属性实现明暗两套主题，使用 Grid / Flex 布局适配手机和桌面。</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">⚡</div>
+          <h3>原生 JavaScript</h3>
+          <p>主题切换、数字计数器、滚动渐入动画，全部使用原生 JS，不依赖任何框架。</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">📦</div>
+          <h3>零构建部署</h3>
+          <p>没有打包步骤，把文件推到仓库并开启 Pages 即可访问，秒级更新。</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 关于 / 留言 -->
+    <section id="about" class="section">
+      <h2 class="section-title">留下你的名字</h2>
+      <form id="message-form" class="form" novalidate>
+        <label class="form-label" for="name-input">名字</label>
+        <div class="form-row">
+          <input id="name-input" class="form-input" type="text" placeholder="输入你的名字后回车" maxlength="20" autocomplete="off">
+          <button class="btn btn-primary" type="submit">添加</button>
+        </div>
+        <p id="form-hint" class="form-hint" role="status"></p>
+      </form>
+      <ul id="message-list" class="message-list"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> MySite · 由 GitHub Pages 托管</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
